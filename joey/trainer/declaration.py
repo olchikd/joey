@@ -10,20 +10,21 @@ class Declaration(object):
     REQUIRED_KEYS = ('output_field', 'fieldset', 'algorithm')
 
     def __init__(self, data):
+        try:
             data = json.loads(data)
         except Exception as e:
             raise ModelJsonException(e)
 
-        _validate(data)
+        self._validate(data)
 
         # Algo part of the configuration
         algorithm_config = data.get('algorithm', None)
         if algorithm_config is None:
             raise ModelDeclarationException('ML algo declaration not found')
 
-        self.algo_class = classifier_config.get('class')
-        self.algo_type = classifier_config.get('type')
-        self.parameters = parameters
+        self.algo_class = algorithm_config.get('class')
+        self.algo_type = algorithm_config.get('type')
+        self.parameters = algorithm_config.get('parameters')
 
         module, name = self.algo_class.rsplit(".", 1)
         module = importlib.import_module(module)
@@ -45,7 +46,7 @@ class Declaration(object):
             self.fieldset[field.name] = field
 
     def _validate(self, data):
-        for key in REQUIRED_KEYS:
+        for key in Declaration.REQUIRED_KEYS:
             if not key in data:
                 raise ModelDeclarationException(
                     "missing element {0}".format(key))

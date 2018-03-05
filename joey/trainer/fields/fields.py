@@ -1,4 +1,4 @@
-from exceptions import ProcessingException
+from ..exceptions import ProcessingFieldException
 
 
 class BaseField(object):
@@ -16,7 +16,7 @@ class BaseField(object):
             if not self.default is None:
                 value = self.default
             else:
-                raise ProcessingException("missing {0}".format(self.name))
+                raise ProcessingFieldException("missing {0}".format(self.name))
         return value
 
     def apply_type(self, value):

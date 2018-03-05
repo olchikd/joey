@@ -4,7 +4,6 @@
     "type": "classification",
     "parameters": {"penalty": "l2"}
   },
-  "group": "is_daytime",
   "output_field": "turn_healthing",
   "fieldset": [
     {
@@ -16,7 +15,7 @@
       "type": "float"
     },
     {
-      "name":"is",
+      "name":"is_smth",
       "type": "float",
       "parameters": {
 

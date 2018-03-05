@@ -1,12 +1,7 @@
 from fields import BaseField
-from utils import all_subclasses
+from ..utils import fill_type_map
 
-
-TYPE_MAP = {}
-# TODO: Lookup to folder in the config
-for field in all_subclasses(BaseField):
-    if not field.type_name is None:
-        TYPE_MAP[field.type_name] = cls
+TYPE_MAP = fill_type_map(BaseField)
 
 
 class FieldFactory(object):
