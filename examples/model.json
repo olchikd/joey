@@ -1,0 +1,26 @@
+{
+  "algorithm": {
+    "class": "sklearn.linear_model.LogisticRegression",
+    "type": "classification",
+    "parameters": {"penalty": "l2"}
+  },
+  "group": "is_daytime",
+  "output_field": "turn_healthing",
+  "fieldset": [
+    {
+      "name":"turn_healthing",
+      "type":"boolean"
+    },
+    {
+      "name":"temperature",
+      "type": "float"
+    },
+    {
+      "name":"is",
+      "type": "float",
+      "parameters": {
+
+      }
+    }
+  ]
+}
