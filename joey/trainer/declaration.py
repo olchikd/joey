@@ -23,7 +23,7 @@ class Declaration(object):
             raise ModelDeclarationException('ML algo declaration not found')
 
         self.algo_class = algorithm_config.get('class')
-        self.algo_type = algorithm_config.get('type')
+        self.algo_type = algorithm_config.get('type', 'classification')
         self.parameters = algorithm_config.get('parameters')
 
         module, name = self.algo_class.rsplit(".", 1)
@@ -44,6 +44,10 @@ class Declaration(object):
                 self.required_fields.append(field.name)
 
             self.fieldset[field.name] = field
+
+    @property
+    def y_field(self):
+        return self.fieldset[self.output_field]
 
     def _validate(self, data):
         for key in Declaration.REQUIRED_KEYS:

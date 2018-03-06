@@ -27,12 +27,11 @@ def main(argv=None):
         file_format = args.dataset_format or 'json'
         reader = FileReaderFactory.factory(file_format)
         with open(args.dataset, 'r') as fp:
-            result = model.predict(reader.get_reader(fp))
-        for name, val in result.iteritems(): 
-            logger.info("{0} = {1}".format(name, val))
+            result = model.evaluate(reader.get_reader(fp))
+        logger.info(result)
     except Exception as e:
         raise
-        logger.info('Error occurred during prediction: %s', e.message)
+        logger.info('Error occurred during evaluation: %s', e.message)
         return PREDICTION_ERROR
 
     return DONE
@@ -45,7 +44,7 @@ def create_parser():
         formatter_class=RawDescriptionHelpFormatter)
     parser.add_argument(
         '-d', '--dataset', dest='dataset',
-        help='dataset.',
+        help='evaluating dataset.',
         metavar='dataset')
     parser.add_argument(
         '-f', '--format', dest='dataset_format',

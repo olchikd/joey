@@ -16,5 +16,8 @@ class Model(object):
     def train(self, iterator):
         self.trained_model = self.trainer.train(iterator)
 
+    def evaluate(self, iterator):
+        return self.trainer.evaluate(self.trained_model, iterator)
+
     def predict(self, iterator):
         return self.trainer.predict(self.trained_model, iterator)
