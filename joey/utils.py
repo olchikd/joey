@@ -8,10 +8,5 @@ def init_logger():
 
     logging.basicConfig(level=logging.INFO, filemode="w",
                         format=logformat, datefmt=datefmt)
-
-    stream_handler = logging.StreamHandler(sys.stderr)
-    stream_handler.setFormatter(logging.Formatter(fmt=logformat, datefmt=datefmt))
-
     logger = logging.getLogger("joye")
-    logger.addHandler(stream_handler)
     return logger
