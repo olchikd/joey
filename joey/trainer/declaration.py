@@ -37,7 +37,7 @@ class Declaration(object):
         self.fieldset = OrderedDict()
         self.required_fields = []
         for field_data in data['fieldset']:
-            self._validate_field(field)
+            self._validate_field(field_data)
 
             field = FieldFactory.factory(field_data)
             if field.is_required:
@@ -52,5 +52,5 @@ class Declaration(object):
                     "missing element {0}".format(key))
 
     def _validate_field(self, field):
-        if not ('name' in feature and 'type' in field):
+        if not ('name' in field and 'type' in field):
             raise ModelDeclarationException('missing in {0} decl'.format(field))

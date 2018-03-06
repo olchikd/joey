@@ -1,0 +1,14 @@
+[
+{
+    "temperature": 30,
+    "outside_temperature": 20
+},
+{
+    "temperature": 15,
+    "outside_temperature": 0
+},
+{
+    "temperature": 15,
+    "outside_temperature": -20
+}
+]

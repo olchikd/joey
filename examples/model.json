@@ -15,7 +15,7 @@
       "type": "float"
     },
     {
-      "name":"is_smth",
+      "name":"outside_temperature",
       "type": "float",
       "parameters": {
 

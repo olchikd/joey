@@ -1,5 +1,7 @@
 import json
-    
+
+from base import BaseReader
+
 
 class JsonReader(BaseReader):
     type_name = 'json'

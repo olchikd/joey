@@ -12,4 +12,4 @@ class FieldFactory(object):
         is_required = data.get('is_required', True)
         parameters = data.get('parameters', [])
         default = data.get('default', None)
-        return TYPE_MAP[feature_type](name, required, parameters, default)
+        return TYPE_MAP[feature_type](name, is_required, parameters, default)

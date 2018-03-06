@@ -1,0 +1,90 @@
+[
+{
+    "turn_healthing": false,
+    "temperature": 22,
+    "outside_temperature": 0
+},
+{
+    "turn_healthing": false,
+    "temperature": 23,
+    "outside_temperature": 0
+},
+{
+    "turn_healthing": false,
+    "temperature": 22.5,
+    "outside_temperature": 20
+},
+{
+    "turn_healthing": false,
+    "temperature": 22,
+    "outside_temperature": 10
+},
+{
+    "turn_healthing": false,
+    "temperature": 28,
+    "outside_temperature": 0
+},
+{
+    "turn_healthing": false,
+    "temperature": 25,
+    "outside_temperature": 0
+},{
+    "turn_healthing": false,
+    "temperature": 23,
+    "outside_temperature": -10
+},{
+    "turn_healthing": true,
+    "temperature": 20,
+    "outside_temperature": 0
+},
+{
+    "turn_healthing": true,
+    "temperature": 15,
+    "outside_temperature": 0
+},
+{
+    "turn_healthing": true,
+    "temperature": 18,
+    "outside_temperature": 0
+},
+{
+    "turn_healthing": true,
+    "temperature": 16,
+    "outside_temperature": 0
+},
+{
+    "turn_healthing": true,
+    "temperature": 14,
+    "outside_temperature": 0
+},
+{
+    "turn_healthing": true,
+    "temperature": 13,
+    "outside_temperature": 0
+},
+{
+    "turn_healthing": true,
+    "temperature": 12,
+    "outside_temperature": 0
+},
+{
+    "turn_healthing": true,
+    "temperature": 18,
+    "outside_temperature": 0
+},
+{
+    "turn_healthing": true,
+    "temperature": 18,
+    "outside_temperature": 10
+},
+{
+    "turn_healthing": true,
+    "temperature": 21,
+    "outside_temperature": -10
+},
+{
+    "turn_healthing": true,
+    "temperature": 22,
+    "outside_temperature": -20
+}
+]

@@ -1,5 +1,7 @@
 import csv
 
+from base import BaseReader
+
 
 class CsvReader(BaseReader):
     type_name = 'csv'

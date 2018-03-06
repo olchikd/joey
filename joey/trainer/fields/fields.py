@@ -3,6 +3,7 @@ from ..exceptions import ProcessingFieldException
 
 class BaseField(object):
     type_name = None
+    DEFAULT_VALUE = None
 
     def __init__(self, name, is_required, parameters, default):
         self.name = name
@@ -10,7 +11,9 @@ class BaseField(object):
         self.parameters = parameters
         self.default = default
 
-    def process(self, value):
+    def clean(self, value):
+        if value is None:
+            return self.default or self.DEFAULT_VALUE
         value = self.apply_type(value)
         if value is None:
             if not self.default is None:
@@ -35,11 +38,18 @@ class StringField(BaseSimpleField):
     simple_type = str
 
 
-class StringField(BaseSimpleField):
+class IntegerField(BaseSimpleField):
     type_name = "integer"
+    DEFAULT_VALUE = 0
     simple_type = int
 
 
-class StringField(BaseSimpleField):
+class FloatField(BaseSimpleField):
     type_name = "float"
+    DEFAULT_VALUE = 0
     simple_type = float
+
+
+class BooleanField(BaseSimpleField):
+    type_name = "boolean"
+    simple_type = int
