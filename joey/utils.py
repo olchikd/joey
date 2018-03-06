@@ -8,5 +8,5 @@ def init_logger():
 
     logging.basicConfig(level=logging.INFO, filemode="w",
                         format=logformat, datefmt=datefmt)
-    logger = logging.getLogger("joye")
+    logger = logging.getLogger("joey")
     return logger

@@ -1,7 +1,7 @@
 **/.DS_Store
 .DS_Store
 .eggs
-joye.egg-info
+joey.egg-info
 *.pyc
 ve/*
 local_config.py
